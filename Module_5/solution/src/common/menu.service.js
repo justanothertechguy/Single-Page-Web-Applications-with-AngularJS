@@ -5,8 +5,8 @@ angular.module('common')
 .service('MenuService', MenuService);
 
 
-MenuService.$inject = ['$http', '$q', 'ApiPath'];
-function MenuService($http, $q, ApiPath) {
+MenuService.$inject = ['$http', 'ApiPath'];
+function MenuService($http, ApiPath) {
   var service = this;
 
   service.getCategories = function () {
@@ -27,12 +27,12 @@ function MenuService($http, $q, ApiPath) {
     });
   };
 
-  service.getMenuItem = function (shortName) {
-    return $http.get(ApiPath + '/menu_items/' + shortName + '.json')
+  service.getFavoriteMenu = function (shortname) {
+    return $http.get(ApiPath + '/menu_items/' + shortname + '.json' )
     .then(function (response) {
-      return response.data;
-    });
-  };
+      return response;
+    })
+  }
 
 }
 
