@@ -1,12 +1,3 @@
-/*  Johns Hopkins University
-      Whiting School of Engineering
-      Department of Computer Science
-      Ruby on Rails Development.
-      https://ep.jhu.edu/programs-and-courses/coursera
-      Platform: Coursera
-      Instructor: Yaakov Chaikin
-      Student:    Joseph M Mwania
-*/
 (function () {
 "use strict";
 
@@ -14,8 +5,8 @@ angular.module('common')
 .service('MenuService', MenuService);
 
 
-MenuService.$inject = ['$http', 'ApiPath'];
-function MenuService($http, ApiPath) {
+MenuService.$inject = ['$http', '$q', 'ApiPath'];
+function MenuService($http, $q, ApiPath) {
   var service = this;
 
   service.getCategories = function () {
@@ -35,12 +26,14 @@ function MenuService($http, ApiPath) {
       return response.data;
     });
   };
-  service.getItem = function (itemShortName) {
-    return $http.get(ApiPath +'/menu_items/'+itemShortName+'.json');
+
+  service.getMenuItem = function (shortName) {
+    return $http.get(ApiPath + '/menu_items/' + shortName + '.json')
+    .then(function (response) {
+      return response.data;
+    });
   };
-  service.addInfo = function (subscriber) {
-    service.info = subscriber;
-  };
+
 }
 
 

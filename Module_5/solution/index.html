@@ -1,12 +1,3 @@
-<!--  Johns Hopkins University
-      Whiting School of Engineering
-      Department of Computer Science
-      Ruby on Rails Development.
-      https://ep.jhu.edu/programs-and-courses/coursera
-      Platform: Coursera
-      Instructor: Yaakov Chaikin
-      Student:    Joseph M Mwania
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,11 +51,11 @@
                   <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
               </li>
               <li ui-sref-active="active">
-                <a ui-sref="public.info">
+                <a ui-sref="public.userinfo">
                   <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
               </li>
               <li ui-sref-active="active">
-                <a ui-sref="public.signup">
+                <a ui-sref="public.signup" >
                   <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
               </li>
               <li id="phone" class="hidden-xs">
@@ -133,7 +124,6 @@
     <script src="src/common/loading/loading.component.js"></script>
     <script src="src/common/loading/loading.interceptor.js"></script>
     <script src="src/common/menu.service.js"></script>
-    <script src="src/common/Info.service.js"></script>
 
     <!-- Public Module -->
     <script src="src/public/public.module.js"></script>
@@ -142,8 +132,11 @@
     <script src="src/public/menu-category/menu-category.component.js"></script>
     <script src="src/public/menu-items/menu-items.controller.js"></script>
     <script src="src/public/menu-item/menu-item.component.js"></script>
-    <script src="src/public/signup/signup.controller.js"></script>
-    <script src="src/public/my-info/info.controller.js"></script>
+    <script src="src/public/signupform/signupform.component.js"></script>
+    <script src="src/public/signupform/signupform.directive.js"></script>
+    <script src="src/public/signupform/signup.factory.js"></script>
+    <script src="src/public/userinfo/userinfo.controller.js"></script>
+
     <!-- ADMIN SITE -->
 
     <!--Application files -->
